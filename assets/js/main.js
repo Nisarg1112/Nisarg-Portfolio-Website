@@ -195,3 +195,28 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*==================== FORM SUBMIT BUTTON ====================*/
+function submit_function_ajax() {
+
+    document.getElementById("contact_form").submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            method: 'POST',
+            url: 'https://formsubmit.co/ajax/nisargtrivedi054@gmail.com',
+            dataType: 'json',
+            accepts: 'application/json',
+            data: form.serialize(),
+            // data: {
+            //     name: "FormSubmit",
+            //     message: "I'm from Devro LABS"
+            // },
+            success: (data) => console.log(data),
+            error: (err) => console.log(err)
+        });
+        
+    });
+    
+}
